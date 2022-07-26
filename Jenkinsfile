@@ -34,7 +34,7 @@ pipeline {
                 script { 
                     def dockerCmd = 'docker run -p 3080:3080 -d marwaezzat/javaapp:1.0'
                    sshagent(['my-ec2-cred']) {
-                    sh "ssh -o StrictHostCheckeng=no ubuntu@52.91.176.83 ${dockerCmd}"
+                    sh "ssh -o StrictHostKeyChecking=no ubuntu@52.91.176.83 ${dockerCmd}"
                    }
                 }
             }
