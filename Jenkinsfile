@@ -38,7 +38,7 @@ pipeline {
 
                     withCredentials([usernamePassword(credentialsId: 'docker-creden', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                          sh "echo $PASS | docker login -u $USER --password-stdin"
-                        sh 'sudo docker run -p 3080:3080 -d marwaezzat/javaapp:1.0'
+                        sh ' docker run -p 3080:3080 -d marwaezzat/javaapp:1.0'
                     }
 
                    }
